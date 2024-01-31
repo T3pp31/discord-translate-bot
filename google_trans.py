@@ -1,7 +1,7 @@
 import json
 
 import discord
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 from langdetect import detect
 
 config = open("google_settings.json")
@@ -53,9 +53,8 @@ async def on_message(message):
     else:
         target_lang = "ja"
 
-    translator = Translator()
-    translated_text = translator.translate(message.content, src=source_lang, dest=target_lang).text
-
+    translated_text = GoogleTranslator(source=source_lang, target=target_lang).translate(message.content)
+    print(translated_text)
     await message.channel.send(translated_text)
 
 client.run(Discord_Token)

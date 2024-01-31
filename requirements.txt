@@ -1,0 +1,3 @@
+discord
+deep_translator
+langdetect
