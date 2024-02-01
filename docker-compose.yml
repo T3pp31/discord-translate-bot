@@ -1,0 +1,12 @@
+version: '3'
+services:
+  translate-disco:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: google-translate
+    environment:
+      - TZ=Asia/Tokyo
+    volumes:
+      - .:/app
+    restart: always
