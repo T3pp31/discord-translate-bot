@@ -32,8 +32,8 @@ async def on_ready():
 @client.event
 async def on_message(message):
     #指定チャンネル以外は無視．チャンネル指定が特にない場合はコメントアウトしてください
-    if message.channel.id != Discord_channel_ID:
-        return
+    #if message.channel.id != Discord_channel_ID:
+    #    return
 
     #botのメッセージは無視
     if message.author == client.user:
