@@ -50,11 +50,8 @@ async def on_message(message):
 
     if source_lang == "ja":
         target_lang = "en"
-    elif source_lang = "en":
-        target_lang = "ja"
     else:
         target_lang = "ja"
-        source_lang = "zh-TW"
 
     translated_text = GoogleTranslator(source=source_lang, target=target_lang).translate(message.content)
     print(translated_text)
