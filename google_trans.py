@@ -40,11 +40,10 @@ async def on_message(message):
         return
 
     #Bot終了
-    if message.content.startswith("おやすみ"):
-        await message.channel.send("おやすみ，また今度")
-        await client.close()
-        exit()
-    print(message.content)
+    # if message.content.startswith("おやすみ"):
+    #     await message.channel.send("おやすみ，また今度")
+    #     await client.close()
+    #     exit()
     #言語自動判定
     source_lang = language(message.content)
 
@@ -57,7 +56,6 @@ async def on_message(message):
         target_lang = "ja"
 
     translated_text = GoogleTranslator(source=source_lang, target=target_lang).translate(message.content)
-    print(translated_text)
     await message.channel.send(translated_text)
 
 client.run(Discord_Token)
